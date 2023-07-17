@@ -1,0 +1,94 @@
+
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>asteroids</title>
+        <style>
+            canvas{
+              position:absolute;
+            background-color:black;
+            }
+          #start{
+            width:60px;
+            height:60px;
+            background-color:white;
+            position:absolute;
+            left:65%;
+            top:70%;
+            font-size:20px;
+          }
+          #start:hover{
+            background-color:#e0e0e0;
+          }
+          #ins{
+            position:absolute;
+            left:65%;
+          }
+          #wdt{
+          color:red;
+          }
+        </style>
+
+    </head>
+
+    <body>
+
+
+<noscript>
+  <h1>Javascript is required to run this game</h1>
+</noscript>
+<div id='ins'><br><br> 
+
+<h2>Instructions</h2><br>
+<h1 id='wdt'></h1>
+
+<h3>destroy the asteroids before they hit you</h3><br>
+<ul>
+  <li>Left and Right arrows to rotate</li>
+  <li>Space to fire</li>
+</ul>
+<h4>smaller asteroids are worth more points</h4>
+<h4>game pauses when you move to other tabs</h4>
+
+<h3 id='hsc'></h3>
+
+  
+<br><br><br><br> <br><br> <br><br> 
+<h5>made by Kellan Butler</h5>
+<br><br><br><br><br><br> <br><br> <br><br> 
+
+<input id='i' type='checkbox'>
+</div>
+
+      
+
+<canvas height="600" width="600" id='main'></canvas>
+<button id='start'>start</button>
+
+
+<script>
+  if (window.matchMedia("(pointer:coarse)").matches){
+  document.getElementById("wdt").innerHTML = "mobile devices not supported"
+  document.getElementById("main").style.display = 'none'
+  }
+  else{
+  globalThis.intrid = setInterval(()=>{
+  if (window.innerWidth < 630){
+    document.getElementById("wdt").innerHTML = "please widen your screen"
+    document.getElementById("main").style.display = 'none'
+  }
+  else{
+  document.getElementById("wdt").innerHTML = ""
+    document.getElementById("main").style.display = 'block'
+    }
+  },20)
+  }
+</script>
+<script src='main.js'></script>
+        
+
+</body>
+
+</html>
